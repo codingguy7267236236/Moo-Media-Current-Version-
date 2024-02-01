@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block title %}Product{% endblock %}
+{%block head%}<link rel="stylesheet" href="{{url_for('static',filename='/css/product.css')}}" type="text/css">
+<script type="text/javascript" src="{{url_for('static',filename='/product.js')}}"></script>
+{%endblock%}
+{% block content %}
+<div id="banner" class="banner">
+  <h1 id="name">Product/Service Name</h1>
+</div>
+
+<div>
+  <center>
+    <div id="seller" class="seller">
+      <img id="sellerpfp" src="https://i.pinimg.com/550x/8f/e6/66/8fe66626ec212bb54e13fa94e84c105c.jpg">
+      <h2 id="sellerun">Seller</h2>
+    </div>
+
+    <h3 id="price">Price: $0.00</h3>
+    <p id="desc"></p>
+    <form action="/buy/{{item[0]}}" method="POST" class="buy">
+      {%if item[7]==1%}
+      <label for="hours">Hours:</label>
+      <input type="number" name="hours">
+      {%endif%}
+      <button class="button">BUY</button>
+    </form>
+    {%if item[1]==user[0]%}
+    <button onclick="location.href='/deleteproduct/{{item[0]}}'" class="button red">Delete</button>
+    {%endif%}
+  </center>
+</div>
+{% endblock %}
+
+{% block script %}
+<script>
+    displayProduct({{item|tojson}});
+</script>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title %}Chat{% endblock %}
+{%block head%}
+<script type="text/javascript" src="{{url_for('static',filename='/chats.js')}}"></script>
+{%endblock%}
+{% block content %}
+<div class="chatHead" onclick="location.href='/profile/{{chat[1]}}'">
+  <center>
+      <img class="chatPfp" src="{% if chat[2] != null and chat[2] != '' and chat[2] != none %}{{url_for('static',filename=chat[2])}}{% else %}https://i.pinimg.com/550x/8f/e6/66/8fe66626ec212bb54e13fa94e84c105c.jpg{%endif%}">
+      <h1>{{chat[1]}}</h1>
+  </center>
+</div>
+<div id="msgs">
+
+</div>
+<div class="messageBar">
+  <textarea name="msg" id="msg" cols="30" rows="1" placeholder="Message {{chat[1]}}..."></textarea>
+  <img class="sendBtn" src="https://cdn-icons-png.flaticon.com/512/3024/3024593.png" onclick="sendMsg()">
+</div>
+</div>
+{% endblock %}
+
+{% block script %}
+<script>
+  loadChatId({{chat[0]}},"{{usr[1]}}","{{usr[2]}}");
+  {% if msgs %}loadMessages({{msgs | tojson}},"{{usr[1]}}"){% endif %}
+</script>
+{% endblock %}

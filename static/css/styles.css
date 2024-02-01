@@ -1,0 +1,412 @@
+*{
+    margin:0;
+    padding:0;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.holder{
+  display:flex;
+  
+}
+
+.logo{
+  border-radius:50%;
+  width:50px;
+}
+
+input{
+  height:50px;
+  width:250px;
+  padding:5px;
+}
+
+input[type="checkbox"]{
+  height:20px;
+  margin-top:10px;
+}
+.profileHead p{
+  margin-top:10px;
+}
+
+.button{
+    cursor: pointer;
+    width: 150px;
+    height: 40px;
+    background: white;
+    color: black;
+    border: 2px solid green;
+    transition-duration: .4s;
+    border-radius: 25px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.button:hover{
+    transition-duration: .4s;
+    background: green;
+    color: white;
+}
+
+.red{
+  border:2px solid red;
+}
+
+.red:hover{
+  background:red;
+}
+
+.blue{
+  border:2px solid blue;
+}
+
+.blue:hover{
+  background:blue;
+}
+
+.green{
+  border:2px solid green;
+  background:green;
+  color:white;
+}
+
+.green:hover{
+  background:white;
+  color:black;
+}
+
+.navbar{
+    width: 100%;
+    display: flex;
+    flex-wrap:wrap;
+    margin: 40px 0px;
+    justify-content:center;
+}
+
+.navbar button{
+    height:50px;
+    background: transparent;
+    border: 2px solid transparent;
+    border-bottom: 2px solid transparent;
+    transition-duration: .4s;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.navbar button:hover{
+    cursor: pointer;
+    border-bottom: 2px solid cyan;
+    transition-duration: .4s;
+}
+
+.navbar img{
+  cursor:pointer;
+  width:50px;
+  margin:2px 10px;
+}
+
+.content{
+    padding: 25px;
+    min-height: 100vh;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.contentHolder{
+  width: 100%;
+  display:flex;
+  justify-content:center;
+}
+
+.feed{
+    margin-top: 30px;
+}
+
+.post{
+    display: grid;
+    grid-template-columns: 70px 1fr;
+    margin-bottom: 20px;
+    border-bottom: 1px solid gray;
+    padding: 10px;
+}
+
+.post div{
+    text-align: left;
+    padding: 10px;
+}
+
+.post h3{
+    cursor: pointer;
+}
+
+.post h3:hover{
+    text-decoration: underline;
+    transition-duration: .4s;
+}
+
+.post img{
+    height:60px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.post p{
+    cursor: pointer;
+}
+
+.imageHolder{
+  display:flex;
+  width:100%;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+
+.imageHolder img{
+  width:100%;
+  border-radius:0;
+  height:auto;
+  margin:5px;
+}
+
+textarea{
+    padding: 10px;
+    width: 100%;
+}
+
+.pfp{
+    width: 90px;
+    border-radius: 50%;
+    margin-top:120px;
+    border:3px solid white;
+}
+
+
+.pfbanner{
+  background-position: center;
+  background-size: cover;
+  height:auto;
+}
+
+.profileHead{
+    cursor:pointer;
+    border-bottom: 2px solid gray;
+    padding: 5px;
+    padding-bottom: 20px;
+}
+
+.profileHead h3{
+    margin-top: 10px;
+}
+
+.profileHead h3:hover{
+  text-decoration:underline;
+  cursor:pointer;
+}
+
+.profSecs{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 10px;
+}
+
+.profSecs h3{
+    border-bottom: 2px solid transparent;
+}
+
+.profSecs h3:hover{
+    border-bottom: 2px solid gray;
+}
+
+.profSecs .selected{
+    border-bottom: 2px solid gray;
+}
+
+.postFoot{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    margin-left: -20px;
+    margin-bottom: -20px;
+}
+
+.likes{
+    display: grid;
+    grid-template-columns: 30px auto;
+    margin-bottom: -10px;
+}
+
+.likes img{
+    width: 20px;
+    height: 20px;
+}
+
+.likes p{
+}
+
+.storeUsr{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-wrap:wrap;
+}
+
+.shopItem{
+    display:block;
+    padding: 15px;
+    width: 230px;
+    height: 280px;
+    text-align: center;
+    border-radius: 25px;
+    margin:15px 15px;
+    background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url("https://s3.us-west-1.wasabisys.com/ft-backgrounds/-mreflowMatt_Wolfe_a_colorful_digital_background_477e314c-c8c2-4491-88d5-1194cd417006.jpeg");
+    box-sizing: border-box;
+    cursor: pointer;
+    background-position: center;
+    background-size: cover;
+    transition: transform 0.5s;
+    color: #fff;
+    vertical-align: middle;
+    text-shadow: 0 0 15px #000;
+}
+
+.shopItem:hover{
+    transform: translateY(-10px);
+}
+
+.shopItem .details{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.liked{
+  background:pink;
+}
+
+.chat{
+  width:100%;
+  display:flex;
+  vertical-align:middle;
+  margin-top:20px;
+  cursor:pointer;
+}
+
+.chat img{
+  width:50px;
+  margin:5px;
+  border-radius:50%;
+}
+
+.chat h3{
+  margin-top:20px;
+  margin-left:15px;
+}
+
+.chatPfp{
+  width:100px;
+  border-radius:50%;
+}
+
+.chatHead{
+  cursor:pointer;
+}
+
+#msgs{
+  margin-top:50px;
+  margin-bottom:110px;
+}
+
+.msg{
+  display:grid;
+  grid-template-columns:50px auto;
+  margin-bottom:20px;
+}
+
+.msg img{
+  width:50px;
+  border-radius:50%;
+}
+
+.msg div{
+  border-radius:20px;
+  color:white;
+  max-width:95%;
+  padding:10px 15px;
+}
+
+.msgYou{
+  background:navy;
+}
+
+.msgOth{
+  background:darkred;
+}
+
+.sendBtn{
+  width:40px;
+}
+
+.messageBar{
+  display:grid;
+  grid-template-columns:1fr 40px;
+  grid-column-gap:5px;
+  position:fixed;
+  bottom:0;
+  width:80%;
+  height:100px;
+  margin:0;
+}
+
+.messageBar textarea{
+  width:100%;
+  height:70px;
+}
+
+.messageBar img{
+  cursor:pointer;
+}
+
+.followHold{
+  display:flex;
+  flex-wrap:wrap;
+  width:100%;
+}
+
+.followHold div{
+  width:auto;
+  display:grid;
+  grid-template-columns:50px auto;
+  flex-wrap:wrap;
+  justify-content:center;
+  cursor:pointer;
+  vertical-align:middle;
+  margin-top:10px;
+  margin-right:20px;
+}
+
+.followHold h3{
+  margin:auto;
+  margin-left:10px;
+}
+
+.followHold img{
+  width:50px;
+  border-radius:50%;
+}
+
+.disable{
+    display: none;
+}
+
+
+
+@media only screen and (min-width: 768px){
+    .content{
+        width: 50%;
+    }
+
+    .messageBar{
+      width:50%;
+    }
+}

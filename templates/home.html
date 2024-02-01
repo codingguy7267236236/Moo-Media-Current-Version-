@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}Feed{% endblock %}
+
+{% block content %}
+<center><h1>Welcome to your feed {{dat["user"][1]}}</h1></center>
+<div id="feedHldrs" class="feed">
+</div>
+{% endblock %}
+
+{% block script %}
+<script>
+    storeToken("{{toke|string}}");
+    {% if posts %}createPosts({{posts | tojson}},{{dat["user"][0]}});{% endif %}
+</script>
+{% endblock %}

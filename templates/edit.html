@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title %}Edit - Profile{% endblock %}
+
+{% block content %}
+<center>
+    <h1>Edit your profile</h1>
+    <img class="pfp" src="{% if usr[2] != null and usr[2] != '' and usr[2] != none %}{{url_for('static',filename=usr[2])}}{% else %}https://i.pinimg.com/550x/8f/e6/66/8fe66626ec212bb54e13fa94e84c105c.jpg{%endif%}">
+</center>
+    <form action="/profileUpdate", method="POST" align="middle" enctype="multipart/form-data">
+        <label for="usrname">Username:</label><br>
+        <input name="usrname" type="text" placeholder="username......" value="{{usr[1]}}"><br>
+        <textarea id="bio" name="bio" cols="30" rows="10" placeholder="Enter Bio...", value="">{%if usr[4] != none and usr[4] != ''%}{{usr[4]}}{%else%} {%endif%}</textarea>
+        <label for="pfp">Profile Picture:</label><br>
+        <input name="pfp" type="file" {%if usr[2] != none %}value="{{url_for('static',filename=usr[2])}}"{%endif%}><br>
+        <label for="banner">Banner:</label><br>
+        <input name="banner" type="file"><br>
+        <button class="button">UPDATE</button>
+    </form>
+{% endblock %}

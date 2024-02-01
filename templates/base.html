@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>Moo Media | {% block title %}{% endblock %}</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" type="image/x-icon" href="/static//images/icon.ico">
+        <link rel="stylesheet" href="{{url_for('static',filename='/css/styles.css')}}" type="text/css">
+        <script type="text/javascript" src="{{url_for('static',filename='/script.js')}}"></script>
+        {%block head%}{%endblock%}
+    </head>
+    <body>
+        <div class="navbar">
+            <img onclick="location.href='/home'" src="https://icons.iconarchive.com/icons/google/noto-emoji-animals-nature/512/22234-cow-icon.png" class="logo">
+            <img onclick="location.href='/home'" src="https://static.thenounproject.com/png/423483-200.png">
+            <img onclick="location.href='/search'" src="https://cdn-icons-png.flaticon.com/256/3917/3917132.png">
+            <img onclick="location.href='/post'" src="https://static.thenounproject.com/png/2818902-200.png">
+            <img onclick="location.href='/shop'" src="https://cdn-icons-png.flaticon.com/512/263/263142.png">
+            <img onclick="location.href='/messages'" src="https://cdn-icons-png.flaticon.com/512/685/685887.png">
+            <img onclick="location.href='/usrprofile'" src="{%if token%}{%if token['user'][2]!=none%}/static/{{token['user'][2]}}{%else%}https://i.pinimg.com/550x/8f/e6/66/8fe66626ec212bb54e13fa94e84c105c.jpg{%endif%}{%else%}https://i.pinimg.com/550x/8f/e6/66/8fe66626ec212bb54e13fa94e84c105c.jpg{%endif%}">
+        </div>
+        
+        <div class="contentHolder">
+          <div class="content">
+              {% block content %}{% endblock %}
+          </div>
+        </div>
+    </body>
+
+    <footer>
+        {% block script %}{% endblock %}
+    </footer>
+</html>

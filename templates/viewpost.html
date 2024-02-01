@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %}Post{% endblock %}
+
+{% block content %}
+<div id="mainPost">
+</div>
+
+<center><h1>Reply to this Post</h1></center>
+<form action="/reply/{{postId}}", method="POST">
+    <textarea id="content" name="content" cols="30" rows="10" placeholder="Enter post"></textarea>
+    <button>REPLY</button>
+</form>
+
+<h3>Replies</h3>
+<div id="replies" class="replies">
+
+</div>
+{% endblock %}
+
+{% block script %}
+<script>
+    loadViewPost({{post| tojson}},{{replies| tojson}},{{usr[0]}});
+</script>
+{% endblock %}

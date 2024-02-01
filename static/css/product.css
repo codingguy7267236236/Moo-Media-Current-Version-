@@ -1,0 +1,46 @@
+.banner{
+  display:flex;
+  background-position: center;
+  background-size: cover;
+  min-height:300px;
+  color:white;
+  text-align:middle;
+  vertical-align:middle;
+  margin-bottom:25px;
+}
+
+.banner h1{
+  text-align:middle;
+  vertical-align:middle;
+  margin:auto;
+}
+
+.seller{
+  display:flex;
+  text-align:middle;
+  vertical-align:middle;
+  margin-bottom:30px;
+  cursor:pointer;
+}
+
+.seller h2{
+  margin:auto 10px;
+  text-align:middle;
+  vertical-align:middle;
+}
+
+.seller img{
+  width:50px;
+}
+
+.checkbox{
+  height:10px;
+}
+
+h3{
+  margin-bottom:10px;
+}
+
+p{
+  margin-bottom:10px;
+}

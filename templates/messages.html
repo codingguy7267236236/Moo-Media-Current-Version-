@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title %}Messages{% endblock %}
+{%block head%}
+<script type="text/javascript" src="{{url_for('static',filename='/chats.js')}}"></script>
+{%endblock%}
+{% block content %}
+<center>
+    <h1>Your Chats</h1>
+</center>
+<div id="chats">
+
+</div>
+{% endblock %}
+
+{% block script %}
+<script>
+    {% if chats %}loadChats({{chats | tojson}}){% endif %}
+</script>
+{% endblock %}

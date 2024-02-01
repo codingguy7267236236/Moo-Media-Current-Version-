@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% block title %}{{usr[1]}}{% endblock %}
+
+{% block content %}
+<center class="profileHead">
+    <div class="pfbanner" style="background-image:url('/static/{{usr[5]}}')">
+      <img class="pfp" src="{% if usr[2] != null and usr[2] != '' and usr[2] != none %}{{url_for('static',filename=usr[2])}}{% else %}https://i.pinimg.com/550x/8f/e6/66/8fe66626ec212bb54e13fa94e84c105c.jpg{%endif%}">
+    </div>
+    <h1>{{usr[1]}}</h1>
+    <p>{{usr[4]}}</p>
+    <h3 id="followers" onclick="flwpost('followerss')">Followers: {{usr[3]}}</h3>
+    <h3 id="following" onclick="flwpost('followings')">Following: {{usr[6]}}</h3>
+    <h3 onclick="flwpost('feedHldrs')">Posts: {{postNum}}</h3>
+    {%if dat is not none%}
+        {%if dat["user"][0]==usr[0]%}
+        <p>Balance: ${{money}}</p>
+        <button class="button" onclick="location.href='/post'">POST</button>
+        <button class="button" onclick="location.href='/edit'">EDIT</button>
+        <button class="button" onclick="location.href='/addItem'">ADD TO SHOP</button>
+        <button class="button blue" onclick="location.href='/messages'">MESSAGES</button>
+        <button class="button red" onclick="location.href='/logout'">LOGOUT</button>
+        {%else%}
+          {%if flw==1%}<button id="flwBtn" class="button green" onclick="follow({{usr[0]}})">FOLLOWING</button>
+          {%else%}<button id="flwBtn" class="button" onclick="follow({{usr[0]}})">FOLLOW</button>
+          {%endif%}
+          <button class="button blue" onclick="location.href='/message/{{usr[0]}}'">MESSAGE</button>
+        {%endif%}
+    {%endif%}
+    <div class="profSecs">
+        <h3 class="selected" id="storeUsr" onclick="usrSec(0)">Posts</h3>
+        <h3 id="postsUsr" onclick="usrSec(1)">Store</h3>
+    </div>
+</center>
+<div id="followerss" class="disable">
+  <h2>Followers</h2>
+  <section id="followerss2" class="followHold"></section>
+</div>
+<div id="followings" class="disable">
+  <h2>Following</h2>
+  <section id="followings2" class="followHold"></section>
+</div>
+<div id="feedHldrs" class="feed">
+</div>
+
+<div id="storeHldr" class="disable">
+    <div class="shopItem">
+        <div class="details">
+            <div>
+                <h3>Product Name</h3>
+                <h4>Price: $5.99</h4>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block script %}
+<script>
+    {% if posts %}createPosts({{posts | tojson}},{{dat["user"][0]}});{% endif %}
+    loadShopItems({%if shop%}{{shop|tojson}}{%else%}[]{%endif%});
+    {% if flwData %}loadFollow({{flwData | tojson}});{% endif %}
+</script>
+{% endblock %}

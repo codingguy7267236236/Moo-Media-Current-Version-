@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}Store{% endblock %}
+
+{% block content %}
+<center><h1>Shop</h1></center>
+<div id="storeHldr" class="storeUsr">
+</div>
+{% endblock %}
+
+{% block script %}
+<script>
+    loadShopItems({%if shop%}{{shop|tojson}}{%endif%});
+</script>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}Add Item{% endblock %}
+
+{% block content %}
+<center>
+    <h1>Add a product/service to your store</h1>
+    <img class="pfp" src="{% if usr[2] != null and usr[2] != '' and usr[2] != none %}{{url_for('static',filename=usr[2])}}{% else %}https://i.pinimg.com/550x/8f/e6/66/8fe66626ec212bb54e13fa94e84c105c.jpg{%endif%}">
+</center>
+    <form action="/addItemToDB", method="POST" align="middle" enctype="multipart/form-data">
+        <label for="name">Product/Service Name:</label><br>
+        <input name="name" type="text" placeholder="product/service name......" value=""><br>
+        <label for="price">Price: $</label>
+        <input name="price" type="number" value="1"><br>
+        <textarea name="desc" placeholder="prodcut/service description......" cols="30" rows="10"></textarea><br>
+        <label for="hourly">Hourly Rate:</label>
+        <input type="checkbox" class="checkbox" name="hourly" value="true"><br>
+        <label for="img">Cover Image:</label><br>
+        <input name="img" type="file"><br>
+        <button class="button">ADD</button>
+    </form>
+{% endblock %}
