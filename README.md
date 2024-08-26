@@ -14,6 +14,7 @@ Mock Social Media Site design that uses Python Flask Framework. It acts like a t
 - <b>CSS</b>
 - <b>JavaScript</b> 
 - <b>Flask (Python Library)</b>
+- <b>Django</b>
 
 <h2>Environments Used </h2>
 
